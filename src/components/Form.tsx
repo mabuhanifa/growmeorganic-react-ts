@@ -1,5 +1,6 @@
-import { Button, Input, InputLabel } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { useState } from "react";
+import { btn, input } from "../styles/style";
 import { InputEvent } from "../types/types";
 
 export default function Form() {
@@ -13,10 +14,39 @@ export default function Form() {
   return (
     <div>
       <form onSubmit={submitter}>
-        <InputLabel htmlFor="name">Name</InputLabel>
-        <Input id="name" name="name" onChange={(e) => setName(e.target.value)} />
+        <TextField
+          size="small"
+          required
+          label="Name"
+          variant="outlined"
+          onChange={(e) => setName(e.target.value)}
+          sx={input}
+        />
+        <TextField
+          size="small"
+          required
+          label="Phone"
+          variant="outlined"
+          onChange={(e) => setName(e.target.value)}
+          sx={input}
+        />
+        <TextField
+          size="small"
+          required
+          label="Email"
+          variant="outlined"
+          onChange={(e) => setName(e.target.value)}
+          sx={input}
+        />
 
-        <Button type="submit" variant="contained">Submit</Button>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          sx={btn}
+        >
+          Submit
+        </Button>
       </form>
     </div>
   );
