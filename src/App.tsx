@@ -5,9 +5,9 @@ function App() {
 
 
   return (
-    <>
+    <section className="main">
       <Form />
-    </>
+    </section>
   )
 }
 
