@@ -5,12 +5,12 @@ import { InputEvent } from "../types/types";
 
 export default function Form() {
   const [name, setName] = useState("")
+  const [phone, setPhone] = useState("")
+  const [email, setEmail] = useState("")
   const submitter = (e: InputEvent) => {
     e.preventDefault();
-    console.log(name);
-    console.log(`object`);
+    console.log(name, phone, email);
   };
-  console.log(name);
   return (
     <div>
       <form onSubmit={submitter}>
@@ -27,7 +27,7 @@ export default function Form() {
           required
           label="Phone"
           variant="outlined"
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setPhone(e.target.value)}
           sx={input}
         />
         <TextField
@@ -35,7 +35,7 @@ export default function Form() {
           required
           label="Email"
           variant="outlined"
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           sx={input}
         />
 
