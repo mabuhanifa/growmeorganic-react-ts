@@ -10,3 +10,14 @@ export interface Posts {
 export type Children = {
   children: React.ReactNode;
 };
+
+export interface User {
+  name: string;
+  phone: string;
+  email: string;
+}
+
+export interface StateType {
+  user: User;
+  posts: Posts[];
+}
