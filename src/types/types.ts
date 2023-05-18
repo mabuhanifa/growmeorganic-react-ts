@@ -21,3 +21,5 @@ export interface StateType {
   user: User;
   posts: Posts[];
 }
+
+export type Action = { type: "ADD_USER"; payload: User };

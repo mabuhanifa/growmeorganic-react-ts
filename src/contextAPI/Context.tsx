@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { StateType, type Children } from "../types/types";
+import { Action, StateType, type Children } from "../types/types";
 
 const Context = createContext({} as StateType);
 
@@ -11,6 +11,17 @@ const initialState: StateType = {
     },
     posts: []
 }
+
+
+export const reducer = (state: StateType, action: Action) => {
+    switch (action.type) {
+        case "ADD_USER":
+            return {
+                ...state, user: action.payload
+            }
+    }
+
+};
 
 
 
