@@ -13,3 +13,7 @@ form {
   padding: 20px;
   border-radius: 0.5rem;
 }
+.dataTable {
+  display: flex;
+  justify-content: center;
+}

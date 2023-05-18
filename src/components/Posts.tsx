@@ -17,7 +17,9 @@ export default function Posts() {
     }, [dispatch])
     return (
         <div>
-            <DataTable />
+            <div className="dataTable">
+                <DataTable />
+            </div>
         </div>
     )
 }
