@@ -13,18 +13,24 @@ export default function Form() {
   const [email, setEmail] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate()
+
   const submitter = (e: InputEvent) => {
     e.preventDefault();
-
     dispatch({
       type: "ADD_USER",
       payload: { name, phone, email }
     })
     if (name && phone && email) {
       toast.success("User Added Successfully", { duration: 1500 });
-      setTimeout(() => { toast("You will be redirected to page 2", { icon: '↗️', }) }, 1000)
+      setTimeout(() => {
+        toast("You will be redirected to page 2", { icon: '↗️', });
+      }, 1000);
+      setTimeout(() => {
+        navigate("/page2");
+      }, 2000);
+
     } else {
-      toast.error("Please fill all the fields",);
+      toast.error("Please fill all the fields");
     }
   };
 
