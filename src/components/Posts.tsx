@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "../contextAPI/Context";
+import { useDispatch } from "../contextAPI/Context";
+import DataTable from "./DataTable";
 
 export default function Posts() {
     const dispatch = useDispatch();
-    const posts = useSelector(state => state.posts);
     useEffect(() => {
         const loadPosts = async () => {
             const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -17,13 +17,7 @@ export default function Posts() {
     }, [dispatch])
     return (
         <div>
-            {
-                posts && posts.map(post => (
-                    <div key={post.id}>
-                        {post.title}
-                    </div>
-                ))
-            }
+            <DataTable />
         </div>
     )
 }
