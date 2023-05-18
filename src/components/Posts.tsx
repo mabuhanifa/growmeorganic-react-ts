@@ -12,9 +12,9 @@ export default function Posts() {
                 type: "ADD_POSTS",
                 payload: data
             })
-        }
+        };
         loadPosts();
-    }, [dispatch])
+    }, [dispatch]);
     return (
         <div>
             <div className="dataTable">

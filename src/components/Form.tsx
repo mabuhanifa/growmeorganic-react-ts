@@ -20,6 +20,7 @@ export default function Form() {
       type: "ADD_USER",
       payload: { name, phone, email }
     })
+    localStorage.setItem("loggedUser", JSON.stringify({ name, phone, email }))
     if (name && phone && email) {
       toast.success("User Added Successfully", { duration: 1500 });
       setTimeout(() => {
