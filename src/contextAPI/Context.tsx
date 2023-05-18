@@ -1,7 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import { Action, MainState, StateType, type Children } from "../types/types";
 
-const Context = createContext({} as MainState);
 
 const initialState: StateType = {
     user: {
@@ -19,6 +18,11 @@ export const reducer = (state: StateType, action: Action) => {
             return {
                 ...state, user: action.payload
             }
+        case "ADD_POSTS":
+            return {
+                ...state, posts: action.payload
+            }
+
         default:
             throw new Error();
     }
@@ -27,12 +31,13 @@ export const reducer = (state: StateType, action: Action) => {
 
 
 
+const Context = createContext({} as MainState);
 const Provider = ({ children }: Children) => {
 
     const [state, dispatch] = useReducer(reducer, initialState);
-
+    const store = { state, dispatch }
     return (
-        <Context.Provider value={{ state, dispatch }}>
+        <Context.Provider value={store}>
             {children}
         </Context.Provider>
     )

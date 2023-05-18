@@ -22,7 +22,9 @@ export interface StateType {
   posts: Posts[];
 }
 
-export type Action = { type: "ADD_USER"; payload: User };
+export type Action =
+  | { type: "ADD_USER"; payload: User }
+  | { type: "ADD_POSTS"; payload: Posts[] };
 
 export type MainState = {
   state: StateType;
