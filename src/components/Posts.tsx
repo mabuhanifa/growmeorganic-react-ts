@@ -1,22 +1,23 @@
-import { useEffect, useState } from "react";
-import { type Posts } from "../types/types";
+import { useEffect } from "react";
+import { useStore } from "../contextAPI/Context";
 
 export default function Posts() {
-    const [posts, setPosts] = useState<Posts[]>([]);
-
-
+    const { state: { posts }, dispatch } = useStore();
     useEffect(() => {
         const loadPosts = async () => {
             const res = await fetch('https://jsonplaceholder.typicode.com/posts');
             const data = await res.json();
-            setPosts(data);
+            dispatch({
+                type: "ADD_POSTS",
+                payload: data
+            })
         }
         loadPosts();
-    }, [])
+    }, [dispatch])
     return (
         <div>
             {
-                posts.map(post => (
+                posts && posts.map(post => (
                     <div key={post.id}>
                         {post.title}
                     </div>

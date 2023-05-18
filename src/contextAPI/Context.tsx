@@ -11,8 +11,7 @@ const initialState: StateType = {
     posts: []
 }
 
-
-export const reducer = (state: StateType, action: Action) => {
+const reducer = (state: StateType, action: Action) => {
     switch (action.type) {
         case "ADD_USER":
             return {
@@ -40,13 +39,11 @@ const Provider = ({ children }: Children) => {
         <Context.Provider value={store}>
             {children}
         </Context.Provider>
-    )
+    );
 };
 
 export function useStore() {
     return useContext(Context);
 }
-
-
 
 export default Provider;
