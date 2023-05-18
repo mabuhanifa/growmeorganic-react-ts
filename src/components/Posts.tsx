@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import { useStore } from "../contextAPI/Context";
+import { useDispatch, useSelector } from "../contextAPI/Context";
 
 export default function Posts() {
-    const { state: { posts }, dispatch } = useStore();
+    const dispatch = useDispatch();
+    const posts = useSelector(state => state.posts);
     useEffect(() => {
         const loadPosts = async () => {
             const res = await fetch('https://jsonplaceholder.typicode.com/posts');

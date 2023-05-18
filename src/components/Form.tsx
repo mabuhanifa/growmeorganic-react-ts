@@ -1,15 +1,22 @@
 import { Button, FormControl, TextField } from "@mui/material";
 import { useState } from "react";
+import { useDispatch } from "../contextAPI/Context";
 import { btn, input } from "../styles/style";
 import { InputEvent } from "../types/types";
 
 export default function Form() {
-  const [name, setName] = useState("")
-  const [phone, setPhone] = useState("")
-  const [email, setEmail] = useState("")
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const dispatch = useDispatch();
+
   const submitter = (e: InputEvent) => {
     e.preventDefault();
-    console.log(name, phone, email);
+
+    dispatch({
+      type: "ADD_USER",
+      payload: { name, phone, email }
+    })
   };
   return (
     <div className="form-container">

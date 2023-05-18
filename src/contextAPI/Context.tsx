@@ -28,13 +28,10 @@ const reducer = (state: StateType, action: Action) => {
 
 };
 
-
-
 const Context = createContext({} as MainState);
 const Provider = ({ children }: Children) => {
-
     const [state, dispatch] = useReducer(reducer, initialState);
-    const store = { state, dispatch }
+    const store = { state, dispatch };
     return (
         <Context.Provider value={store}>
             {children}
@@ -42,8 +39,15 @@ const Provider = ({ children }: Children) => {
     );
 };
 
-export function useStore() {
-    return useContext(Context);
+export function useSelector<T>(selector: (state: StateType) => T) {
+    const { state } = useContext(Context)
+    return selector(state);
+}
+
+export function useDispatch() {
+    const { dispatch } = useContext(Context);
+    return dispatch;
+
 }
 
 export default Provider;
