@@ -8,10 +8,8 @@ function App() {
   return (
     <section className="main">
       <Routes>
-
         <Route path="/" element={<Form />} />
         <Route path="/page2" element={<Posts />} />
-
       </Routes>
 
 
