@@ -23,3 +23,8 @@ export interface StateType {
 }
 
 export type Action = { type: "ADD_USER"; payload: User };
+
+export type MainState = {
+  state: StateType;
+  dispatch: React.Dispatch<Action>;
+};

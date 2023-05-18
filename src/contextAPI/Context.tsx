@@ -1,7 +1,7 @@
-import { createContext, useContext } from "react";
-import { Action, StateType, type Children } from "../types/types";
+import { createContext, useContext, useReducer } from "react";
+import { Action, MainState, StateType, type Children } from "../types/types";
 
-const Context = createContext({} as StateType);
+const Context = createContext({} as MainState);
 
 const initialState: StateType = {
     user: {
@@ -19,6 +19,8 @@ export const reducer = (state: StateType, action: Action) => {
             return {
                 ...state, user: action.payload
             }
+        default:
+            throw new Error();
     }
 
 };
@@ -26,8 +28,11 @@ export const reducer = (state: StateType, action: Action) => {
 
 
 const Provider = ({ children }: Children) => {
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+
     return (
-        <Context.Provider value={initialState}>
+        <Context.Provider value={{ state, dispatch }}>
             {children}
         </Context.Provider>
     )
