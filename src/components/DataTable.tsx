@@ -10,7 +10,7 @@ export default function DataTable() {
         {
             field: "userId",
             headerName: "USER ID",
-            width: 20,
+            width: 35,
             sortable: true,
         },
         {
