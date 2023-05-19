@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
 import { Action, MainState, StateType, type Children } from "../types/types";
 
 
@@ -28,7 +28,7 @@ const reducer = (state: StateType, action: Action) => {
 
 };
 
-const Context = createContext({} as MainState);
+export const Context = createContext({} as MainState);
 const Provider = ({ children }: Children) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const store = { state, dispatch };
@@ -38,16 +38,5 @@ const Provider = ({ children }: Children) => {
         </Context.Provider>
     );
 };
-
-export function useSelector<T>(selector: (state: StateType) => T) {
-    const { state } = useContext(Context)
-    return selector(state);
-}
-
-export function useDispatch() {
-    const { dispatch } = useContext(Context);
-    return dispatch;
-
-}
 
 export default Provider;

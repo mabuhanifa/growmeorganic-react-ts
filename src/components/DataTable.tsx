@@ -1,9 +1,11 @@
 import { Box } from '@mui/material';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import { useSelector } from '../contextAPI/Context';
+import { useSelector } from '../contextAPI/hooks';
 
 export default function DataTable() {
+
     const posts = useSelector(state => state.posts);
+
     const columns: GridColDef[] = [
         {
             field: "userId",

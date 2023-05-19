@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch } from "../contextAPI/Context";
+import { useDispatch } from "../contextAPI/hooks";
 import data from "../data/data.json";
 import Check from "./Check";
 import DataTable from "./DataTable";

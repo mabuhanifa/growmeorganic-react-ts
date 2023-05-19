@@ -2,8 +2,7 @@ import { Button, FormControl, TextField } from "@mui/material";
 import { useState } from "react";
 import { Toaster, toast, } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-
-import { useDispatch } from "../contextAPI/Context";
+import { useDispatch } from "../contextAPI/hooks";
 import { btn, input } from "../styles/style";
 import { InputEvent } from "../types/types";
 
