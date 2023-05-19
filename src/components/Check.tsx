@@ -13,9 +13,9 @@ export default function Check({ item }: {
         <div >
             <Checkbox checked={checked} onChange={() => setChecked(!checked)} />
             <label>{item.department}</label>
-            {item.sub_departments.map((sub_item) => {
+            {item.sub_departments.map((sub_item, index: number) => {
                 return (
-                    <SubCheck sub_item={sub_item} checked={checked} />
+                    <SubCheck sub_item={sub_item} checked={checked} key={index} />
                 )
             })}
         </div>
