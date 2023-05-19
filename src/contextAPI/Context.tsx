@@ -13,10 +13,12 @@ const initialState: StateType = {
 
 const reducer = (state: StateType, action: Action) => {
     switch (action.type) {
+
         case "ADD_USER":
             return {
                 ...state, user: action.payload
             }
+
         case "ADD_POSTS":
             return {
                 ...state, posts: action.payload
@@ -25,13 +27,15 @@ const reducer = (state: StateType, action: Action) => {
         default:
             throw new Error();
     }
-
 };
 
 export const Context = createContext({} as MainState);
+
 const Provider = ({ children }: Children) => {
     const [state, dispatch] = useReducer(reducer, initialState);
+
     const store = { state, dispatch };
+
     return (
         <Context.Provider value={store}>
             {children}

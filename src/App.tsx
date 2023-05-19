@@ -1,11 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import Home from './pages/Home';
 import Second from './pages/Second';
 import PrivateRoutes from './utils/PrivateRoutes';
 
 function App() {
-
   return (
     <section className="main">
       <Routes>

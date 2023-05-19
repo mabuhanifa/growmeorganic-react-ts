@@ -10,6 +10,7 @@ export default function Form() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -18,8 +19,10 @@ export default function Form() {
     dispatch({
       type: "ADD_USER",
       payload: { name, phone, email }
-    })
-    localStorage.setItem("loggedUser", JSON.stringify({ name, phone, email }))
+    });
+
+    localStorage.setItem("loggedUser", JSON.stringify({ name, phone, email }));
+
     if (name && phone && email) {
       toast.success("User Added Successfully", { duration: 1500 });
       setTimeout(() => {
@@ -28,20 +31,23 @@ export default function Form() {
       setTimeout(() => {
         navigate("/page2");
       }, 2000);
-
-    } else {
+    }
+    else {
       toast.error("Please fill all the fields");
     }
   };
 
   return (
     <div className="form-container">
+
       <div>
         <Toaster />
       </div>
 
       <form onSubmit={submitter}>
+
         <FormControl sx={{ minWidth: "400px" }}>
+
           <TextField
             size="small"
             required
@@ -69,7 +75,6 @@ export default function Form() {
             sx={input}
             fullWidth
           />
-
           <Button
             type="submit"
             variant="contained"
@@ -79,7 +84,9 @@ export default function Form() {
           >
             Submit
           </Button>
+
         </FormControl>
+
       </form>
     </div>
   );

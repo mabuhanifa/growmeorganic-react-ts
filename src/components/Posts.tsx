@@ -4,7 +4,6 @@ import data from "../data/data.json";
 import Check from "./Check";
 import DataTable from "./DataTable";
 
-
 export default function Posts() {
     const dispatch = useDispatch();
     useEffect(() => {
