@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Posts from './components/Posts';
 import Home from './pages/Home';
+import Second from './pages/Second';
 import PrivateRoutes from './utils/PrivateRoutes';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route element={<PrivateRoutes />}>
-          <Route path="/page2" element={<Posts />} />
+          <Route path="/second" element={<Second />} />
         </Route>
       </Routes>
     </section>
