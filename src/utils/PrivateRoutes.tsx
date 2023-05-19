@@ -13,7 +13,7 @@ export default function PrivateRoutes() {
         }
     });
     if (!user?.email) {
-        toast.error("You need to be logged in to access the second page", { duration: 2000 })
+        toast.error("You need to be logged in to access the second page", { duration: 3000 })
     }
     return user?.email ?
         <>
