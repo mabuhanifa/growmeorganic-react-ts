@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "../contextAPI/Context";
+import CheckBoxes from "./CheckBoxes";
 import DataTable from "./DataTable";
 
 export default function Posts() {
@@ -19,6 +20,9 @@ export default function Posts() {
         <div>
             <div className="dataTable">
                 <DataTable />
+            </div>
+            <div>
+                <CheckBoxes />
             </div>
         </div>
     )

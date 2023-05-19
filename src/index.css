@@ -17,3 +17,10 @@ form {
   display: flex;
   justify-content: center;
 }
+
+.sub_departments {
+  padding: 10px 25px;
+}
+.hide {
+  display: none;
+}
