@@ -30,3 +30,8 @@ export type MainState = {
   state: StateType;
   dispatch: React.Dispatch<Action>;
 };
+
+export type DepartmentItem = {
+  department: string;
+  sub_departments: string[];
+};

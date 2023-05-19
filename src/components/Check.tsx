@@ -1,13 +1,13 @@
 import { Checkbox } from "@mui/material";
 import { useState } from "react";
+import { DepartmentItem } from "../types/types";
 import SubCheck from "./SubCheck";
 
-export default function Check({ item }: {
-    item: {
-        department: string;
-        sub_departments: string[];
-    },
-}) {
+type PropsType = {
+    item: DepartmentItem
+}
+
+export default function Check({ item }: PropsType) {
     const [checked, setChecked] = useState(false);
     return (
         <div >
