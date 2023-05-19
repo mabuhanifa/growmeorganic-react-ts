@@ -29,7 +29,7 @@ export default function Form() {
         toast("You will be redirected to page 2", { icon: '↗️', });
       }, 1000);
       setTimeout(() => {
-        navigate("/page2");
+        navigate("/second");
       }, 2000);
     }
     else {

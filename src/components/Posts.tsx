@@ -19,23 +19,31 @@ export default function Posts() {
     }, [dispatch]);
     return (
         <div>
-            <div className="dataTable">
-                <DataTable />
-            </div>
-            <div className="checkBoxes">
-                <div>
-                    <div className="checkBoxes-container">
-                        {data.map((item, index: number) => {
+            <>
+                <h1>Data Table</h1>
+                <div className="dataTable">
+                    <DataTable />
+                </div>
+            </>
 
-                            return (
-                                <Check key={index} item={item} />
-                            )
 
-                        })}
+            <>
+                <h1>Check Boxes</h1>
+                <div className="checkBoxes">
+                    <div>
+                        <div className="checkBoxes-container">
+                            {data.map((item, index: number) => {
 
+                                return (
+                                    <Check key={index} item={item} />
+                                )
+
+                            })}
+
+                        </div>
                     </div>
                 </div>
-            </div>
+            </>
         </div>
     )
 }
