@@ -26,7 +26,7 @@ export default function Form() {
     if (name && phone && email) {
       toast.success("User Added Successfully", { duration: 1500 });
       setTimeout(() => {
-        toast("You will be redirected to page 2", { icon: '↗️', });
+        toast("You will be redirected to second page", { icon: '↗️', });
       }, 1000);
       setTimeout(() => {
         navigate("/second");
