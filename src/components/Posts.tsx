@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch } from "../contextAPI/Context";
-import CheckBoxes from "./CheckBoxes";
+import data from "../data/data.json";
+import Check from "./Check";
 import DataTable from "./DataTable";
+
 
 export default function Posts() {
     const dispatch = useDispatch();
@@ -21,8 +23,19 @@ export default function Posts() {
             <div className="dataTable">
                 <DataTable />
             </div>
-            <div>
-                <CheckBoxes />
+            <div className="checkBoxes">
+                <div>
+                    <div className="checkBoxes-container">
+                        {data.map((item, index: number) => {
+
+                            return (
+                                <Check key={index} item={item} />
+                            )
+
+                        })}
+
+                    </div>
+                </div>
             </div>
         </div>
     )

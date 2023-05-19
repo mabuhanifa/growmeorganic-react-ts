@@ -2,21 +2,20 @@ import { Checkbox } from "@mui/material";
 import { useState } from "react";
 import SubCheck from "./SubCheck";
 
-export default function Check({ item, index, }: {
+export default function Check({ item }: {
     item: {
         department: string;
         sub_departments: string[];
     },
-    index: number,
 }) {
     const [checked, setChecked] = useState(false);
     return (
-        <div key={index}>
+        <div >
             <Checkbox checked={checked} onChange={() => setChecked(!checked)} />
             <label>{item.department}</label>
-            {item.sub_departments.map((sub_item, sub_index) => {
+            {item.sub_departments.map((sub_item) => {
                 return (
-                    <SubCheck key={sub_index} sub_item={sub_item} checked={checked} />
+                    <SubCheck sub_item={sub_item} checked={checked} />
                 )
             })}
         </div>

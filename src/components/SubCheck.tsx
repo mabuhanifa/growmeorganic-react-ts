@@ -1,10 +1,11 @@
+import { Checkbox } from "@mui/material"
 
-export default function SubCheck({ sub_item, sub_index, checked }: {
-    sub_item: string, sub_index: number, checked: boolean
+export default function SubCheck({ sub_item, checked }: {
+    sub_item: string, checked: boolean
 }) {
     return (
-        <div key={sub_index} className={`sub_departments ${checked ? "" : "hide"}`}>
-            <input type="checkbox" />
+        <div className={`sub_departments ${checked ? "" : "hide"}`}>
+            <Checkbox />
             <label>{sub_item}</label>
         </div>
     )
